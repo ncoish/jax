@@ -829,7 +829,7 @@ class RoundTripToJaxTest(tf_test_util.JaxToTfTestCase):
     #     with tf.init_scope():
     #       added = my_constant * 2
     # The graph tensor has name: args_0:0
-    with self.assertRaisesRegex(TypeError, "An op outside of the function"):
+    with self.assertRaisesRegex(TypeError, "symbolic tensor"):
       _ = jax.grad(f_rt)(x)
 
 
